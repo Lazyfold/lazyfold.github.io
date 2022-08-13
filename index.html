@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOWCARB</title>
+  <link rel="stylesheet" href="resourses/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  
+</head>
+<body>
+  
+<!-- Header -->
+  <header>
+    <a href="#" class="brand">Carbonator</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="#">Home</a>
+        <a href="#">Recipes</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </header>
+
+
+<!-- Home -->
+  <section class="home">
+    <video class="video-slide active" src="./resourses/images/video (1).mp4" autoplay muted loop></video>
+    <video class="video-slide" src="./resourses/images/Sauteed Broccoli And Baby Corn.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="./resourses/images/video.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="./resourses/images/video-chef.mp4" autoplay muted loop></video>
+    <!-- <video class="video-slide" src="5.mp4" autoplay muted loop></video> -->
+    
+
+<!-- Sliders -->
+
+    <!-- Slider 1 -->
+    <div class="content active">
+      <h1>Low carb<br><span>High energy</span></h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#">Read More</a>
+    </div>
+
+    <!-- Content 2 -->
+    <div class="content">
+      <h1>Easy<br><span>Recipes</span></h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#">Read More</a>
+    </div>
+
+    <!-- Content 3 -->
+    <div class="content">
+      <h1>The latest<br><span>News</span></h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#">Read More</a>
+    </div>
+
+    <!-- Content 4 -->
+    <div class="content">
+      <h1>We<br><span>Enjoy food</span></h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#">Read More</a>
+    </div>
+
+    <!-- Content 5 -->
+    <!-- <div class="content">
+      <h1>Slide.<br><span>5</span></h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#">Read More</a>
+    </div> -->
+
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <!-- <div class="nav-btn"></div> -->
+    </div>
+
+<!-- Media -->
+    <div class="media-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+
+  </section>
+
+
+<!-- Javascript -->
+  <script type="text/javascript">
+  //Responsive navigation menu
+    const menuBtn = document.querySelector('.menu-btn');
+    const navigation = document.querySelector('.navigation');
+    
+    menuBtn.addEventListener('click', () => {
+     menuBtn.classList.toggle('active');
+     navigation.classList.toggle('active');
+    })
+
+  //Video slider navigation
+  const btns = document.querySelectorAll('.nav-btn');
+  const slides = document.querySelectorAll('.video-slide');
+  const contents = document.querySelectorAll('.content');
+
+  var sliderNav = function(manual){
+    btns.forEach((btn) => {
+      btn.classList.remove('active')
+    })
+
+    slides.forEach((slide) => {
+      slide.classList.remove('active')
+    })
+
+    contents.forEach((content) => {
+      content.classList.remove('active')
+    })
+
+
+    btns[manual].classList.add('active');
+    slides[manual].classList.add('active');
+    contents[manual].classList.add('active');
+  }
+
+  btns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      sliderNav(i);
+    })
+  })
+
+  </script>
+
+</body>
+</html>
